@@ -23,9 +23,6 @@ contract TestReentrant is DSTest {
         vm.deal(address(reentrant), 100 ether);
         console.log("victim balance start: 100 eth");
 
-        console.log(address(reentrant));
-        console.log(address(this));
-
         attacker.attack();
         console.log("attacker balance end: ", address(attacker).balance);
         console.log("victim balance end: ", address(reentrant).balance);
